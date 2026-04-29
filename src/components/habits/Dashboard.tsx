@@ -13,7 +13,6 @@ import HabitList from './HabitList'
 export default function Dashboard() {
   const router = useRouter()
 
-  // Read session synchronously so render isn't blocked
   const initialSession = typeof window !== 'undefined' ? getSession() : null
   const [session, setSession] = useState<Session | null>(initialSession)
   const [habits, setHabits] = useState<Habit[]>(() => {
@@ -23,22 +22,12 @@ export default function Dashboard() {
   const [showForm, setShowForm] = useState(false)
   const [editingHabit, setEditingHabit] = useState<Habit | null>(null)
 
-  // useEffect(() => {
-  //   const s = getSession()
-  //   if (!s) {
-  //     router.replace('/login')
-  //     return
-  //   }
-  //   setSession(s)
-  //   setHabits(getHabits().filter(h => h.userId === s.userId))
-  // }, [router])
-
   useEffect(() => {
     const s = getSession()
     if (!s) {
       router.replace('/login')
     }
-  }, []) // only run once on mount
+  }, [])
 
   function handleLogout() {
     clearSession()

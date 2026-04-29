@@ -10,7 +10,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const session = getSession()
-    const delay = 1000 // between 800ms and 2000ms as required
+    const delay = 2000
     const timer = setTimeout(() => {
       if (session) {
         router.replace('/dashboard')

@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { calculateCurrentStreak } from '@/lib/streaks'
 
-/* MENTOR_TRACE_STAGE3_HABIT_A91 */
 describe('calculateCurrentStreak', () => {
   const today = '2024-06-15'
   const yesterday = '2024-06-14'
