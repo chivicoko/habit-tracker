@@ -1,0 +1,50 @@
+{
+  "name": "habit-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3010 --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test:unit": "vitest run --coverage",
+    "test:integration": "vitest run",
+    "test:e2e": "playwright test",
+    "test": "pnpm run test:unit && pnpm run test:integration && pnpm run test:e2e"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,css,md}": [
+      "prettier --write"
+    ],
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@playwright/test": "^1.44.0",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "clsx": "^2.1.1",
+    "jsdom": "^24.1.0",
+    "lucide-react": "^0.525.0",
+    "nanoid": "^5.1.5",
+    "next": "15.3.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^10.2.1",
+    "eslint-config-next": "^16.2.4",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^2.1.9"
+  }
+}
